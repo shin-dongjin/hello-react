@@ -2,28 +2,45 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-const lakeList = [
-  {id: "1", name: "Echo", trailhead: "Echo"},
-  {id: "2", name: "Maud", trailhead: "Wrights"},
-  {id: "3", name: "Velma", trailhead: "Bayview"},
-];
+function Lake() {
+  return <h1>Lake!</h1>
+}
 
-function App({ lakes }) {
+function SkiResort() {
+  return <h1>SkiResort!</h1>
+}
+
+/*
+function App() {
   return (
-    <div> 
-      {lakes.map(lake => (
-        <div>
-          <h2>{lake.name}</h2>
-          <p>Accessed by: {lake.trailhead}</p>
-        </div>
-        ))
-      }
+    <div>
+      <Lake />
+      <SkiResort />
     </div>
+  );
+}
+*/
+/*
+function App() {
+  return (
+    <React.Fragment>
+      <Lake />
+      <SkiResort />
+    </React.Fragment>
+  );
+}
+*/
+
+function App() {
+  return (
+    <>
+      <Lake />
+      <SkiResort />
+    </>
   );
 }
 
 ReactDOM.render(
-  <App lakes={lakeList} />,
+  <App />,
   document.getElementById('root')
-
 );
