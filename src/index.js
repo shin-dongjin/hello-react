@@ -2,13 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-let city = {
-  name: "Madrid",
-  country: "Spain"
-};
+function Hello({ library, message, number }) {
+  return (
+    <div>
+      <h2>
+        Hello {library}!
+      </h2>
+      <p>
+        {message}
+      </p>
+      <p>
+        Total number using props: {number} <br/>
+      </p>
+    </div>
+  );
+}
 
 ReactDOM.render(
-  <h1 id="heading" className="cool-text">{city.name} is in {city.country}</h1>,
+  <Hello library="React" message="Add dynamic data!" number={3} />,
   document.getElementById('root')
 );
 
