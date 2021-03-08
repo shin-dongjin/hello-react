@@ -2,24 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Hello({ library, message, number }) {
+const lakeList = [
+  {id: "1", name: "Echo", trailhead: "Echo"},
+  {id: "2", name: "Maud", trailhead: "Wrights"},
+  {id: "3", name: "Velma", trailhead: "Bayview"},
+];
+
+function App({ lakes }) {
   return (
-    <div>
-      <h2>
-        Hello {library}!
-      </h2>
-      <p>
-        {message}
-      </p>
-      <p>
-        Total number using props: {number} <br/>
-      </p>
+    <div> 
+      {lakes.map(lake => (
+        <div>
+          <h2>{lake.name}</h2>
+          <p>Accessed by: {lake.trailhead}</p>
+        </div>
+        ))
+      }
     </div>
   );
 }
 
 ReactDOM.render(
-  <Hello library="React" message="Add dynamic data!" number={3} />,
+  <App lakes={lakeList} />,
   document.getElementById('root')
-);
 
+);
