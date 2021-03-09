@@ -1,42 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Lake() {
-  return <h1>Lake!</h1>
-}
-
-function SkiResort() {
-  return <h1>SkiResort!</h1>
-}
-
-/*
 function App() {
+  const [status, setStatus] = useState("Open");
   return (
     <div>
-      <Lake />
-      <SkiResort />
+      <h1>Status: {status}</h1>
+      <button onClick={() => setStatus("Open")}>
+        Open
+      </button>
+      <button onClick={() => setStatus("Back in 5")}>
+        Break
+      </button>
+      <button onClick={() => setStatus("Closed")}>
+        Closed
+      </button>
     </div>
-  );
-}
-*/
-/*
-function App() {
-  return (
-    <React.Fragment>
-      <Lake />
-      <SkiResort />
-    </React.Fragment>
-  );
-}
-*/
-
-function App() {
-  return (
-    <>
-      <Lake />
-      <SkiResort />
-    </>
   );
 }
 
